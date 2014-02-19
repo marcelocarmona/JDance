@@ -5,8 +5,8 @@ Android Application
 
 IDE - Android Studio
 
-JDance: una aplicación que hace bailar robots 
-==============================================
+###JDance: una aplicación que hace bailar robots 
+
 
 JDance es una aplicación Android para celular que permite definir ritmos de baile que los robots del proyecto 
 “Programando con robots y SL” (http://robots.linti.unlp.edu.ar/) interpretarán. 
@@ -28,7 +28,12 @@ La aplicación servidora está disponible en github: https://github.com/fernando
 La descripción de la aplicación servidora está descripta en: 
 http://wiki.labmovil.linti.unlp.edu.ar/index.php?title=RemoteBot:_Android_%2B_Robots 
 
-tests
-=====
-Para probar la aplicación de forma local con remotebot utlilizar ip 10.0.2.2 y port 8000
+>Para probar la aplicación de forma local con remotebot utlilizar ip 10.0.2.2 y port 8000
 
+Flujo
+======
+![flujo](https://lh5.googleusercontent.com/WuIjQgagqLl9HqWhYQABfn65f_Rghqov4ro0SZBWKVpMdLhSP-fK3jweCnuVx5jsD6fkNABSZW4)
+
+Model
+=====
+![Model](https://lh6.googleusercontent.com/m1iBANUPzRMr_A7zBikxRqcGhmWSiPk68iudPRSzoXrFO9vocdkG7nprNRr6nRudEPz164qUN_8)
