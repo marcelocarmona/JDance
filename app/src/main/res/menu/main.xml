@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_load_robots"
+        android:title="@string/Load_Robots"
+        android:orderInCategory="96"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_create_step"
+        android:title="@string/action_create_step"
+        android:orderInCategory="97"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_create_choreography"
+        android:title="@string/action_create_choreography"
+        android:orderInCategory="98"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_dance_floor"
+        android:title="@string/DanceFloor"
+        android:orderInCategory="99"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>

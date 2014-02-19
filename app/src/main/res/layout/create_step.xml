@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/scrollView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dip">
+
+
+        <!-- Name Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Name"
+            android:singleLine="true"
+            android:layout_marginBottom="5dip" />
+
+        <!-- Name input text -->
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip" />
+
+        <!-- leftMotorVelocity Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="leftMotorVelocity"
+            android:singleLine="true"
+            android:layout_marginBottom="5dip" />
+
+        <!-- leftMotorVelocity seek bar -->
+        <SeekBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sbLeftMotorVelocity"
+            android:indeterminate="false"
+            android:indeterminateOnly="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtLeftMotorVelocity"
+            android:layout_gravity="center_horizontal|right"
+            android:layout_marginBottom="10dip"
+            android:singleLine="true"
+            android:text="0" />
+
+        <!-- rightMotorVelocity Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="rightMotorVelocity"
+            android:layout_marginBottom="5dip" />
+
+        <!-- rightMotorVelocity seek bar -->
+        <SeekBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sbRightMotorVelocity"
+            android:indeterminate="false"
+            android:indeterminateOnly="false"
+            android:mirrorForRtl="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:id="@+id/txtRightMotorVelocity"
+            android:layout_marginBottom="10dip"
+            android:layout_gravity="right" />
+
+        <!-- secondsDuration Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="secondsDuration"
+            android:singleLine="true"
+            android:layout_marginBottom="5dip" />
+
+        <!-- secondsDuration seek bar -->
+        <SeekBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sbSecondsDuration"
+            android:indeterminate="false"
+            android:indeterminateOnly="false" />
+
+        <!-- Create Step button -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:id="@+id/txtSecondsDuration"
+            android:layout_marginBottom="20dip"
+            android:layout_gravity="right" />
+
+        <Button
+            android:id="@+id/btnCreateStep"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Create Step" />
+
+    </LinearLayout>
+
+</ScrollView>
+

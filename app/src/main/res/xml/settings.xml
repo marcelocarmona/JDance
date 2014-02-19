@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.example.jdance.app.util.EditTextPreference
+        android:title="@string/ip"
+        android:key="ip"
+        android:defaultValue="127.0.0.1"
+        android:summary="@string/ip_summary" />
+
+
+    <com.example.jdance.app.util.EditTextPreference
+        android:title="@string/port"
+        android:key="port"
+        android:defaultValue="8000"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+
+
+    <com.example.jdance.app.util.EditTextPreference
+        android:title="@string/device"
+        android:key="device"
+        android:defaultValue="/dev/ttyUSB0"
+        android:summary="@string/device_summary" />
+
+
+</PreferenceScreen>

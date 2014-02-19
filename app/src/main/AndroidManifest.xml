@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jdance.app">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.jdance.app.RobotActivity"
+            android:label="@string/select_a_robot">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.jdance.app.ChoreographyActivity"
+            android:label="@string/Choreographies" />
+        <activity
+            android:name="com.example.jdance.app.DanceFloorActivity"
+            android:label="@string/DanceFloor" />
+        <activity
+            android:name="com.example.jdance.app.CreateStep"
+            android:label="@string/action_create_step" />
+        <activity
+            android:name=".Settings"
+            android:label="@string/Settings" />
+        <activity
+            android:name="com.example.jdance.app.CreateChoreography"
+            android:label="@string/action_create_choreography" />
+    </application>
+
+</manifest>
