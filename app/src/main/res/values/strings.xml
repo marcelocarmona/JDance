@@ -29,5 +29,10 @@
     <string name="robot_id">Robot Id</string>
     <string name="add_step">Add Step</string>
     <string name="seconds">Seconds</string>
+    <string name="name">Name</string>
+    <string name="left_motor_velocity">Left Motor Velocity</string>
+    <string name="right_motor_velocity">Right Motor Velocity</string>
+    <string name="seconds_duration">Seconds Duration</string>
+    <string name="create_step">Create Step</string>
 
 </resources>

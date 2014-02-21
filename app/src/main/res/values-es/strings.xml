@@ -29,5 +29,10 @@
     <string name="robot_id">Robot Id</string>
     <string name="add_step">Agregar Paso</string>
     <string name="seconds">Segundos</string>
+    <string name="name">Nombre</string>
+    <string name="left_motor_velocity">Velocidad de motor izquierdo</string>
+    <string name="right_motor_velocity">Velocidad del motor derecho</string>
+    <string name="seconds_duration">Segundos de duración</string>
+    <string name="create_step">Crear Paso</string>
 
 </resources>

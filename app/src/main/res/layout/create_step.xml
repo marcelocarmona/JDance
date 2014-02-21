@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dip">
 
@@ -17,7 +17,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Name"
+            android:text="@string/name"
             android:singleLine="true"
             android:layout_marginBottom="5dip" />
 
@@ -26,14 +26,15 @@
             android:id="@+id/txtName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dip" />
+            android:layout_marginBottom="10dip"
+            android:inputType="text" />
 
         <!-- leftMotorVelocity Label -->
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="leftMotorVelocity"
+            android:text="@string/left_motor_velocity"
             android:singleLine="true"
             android:layout_marginBottom="5dip" />
 
@@ -62,7 +63,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="rightMotorVelocity"
+            android:text="@string/right_motor_velocity"
             android:layout_marginBottom="5dip" />
 
         <!-- rightMotorVelocity seek bar -->
@@ -90,7 +91,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="secondsDuration"
+            android:text="@string/seconds_duration"
             android:singleLine="true"
             android:layout_marginBottom="5dip" />
 
@@ -117,7 +118,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Create Step" />
+            android:text="@string/create_step" />
 
     </LinearLayout>
 
