@@ -16,6 +16,8 @@ import javax.json.JsonArray;
 
 /**
  * Created by mclo on 18/02/14.
+ * <p/>
+ * clase utilizada para enviar un JsonArray al servidor y devolver el json de la respuesta en forma de String
  */
 public class SenderRequestTask extends AsyncTask<JsonArray, String, String> {
 

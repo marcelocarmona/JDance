@@ -48,4 +48,13 @@ public class Choreography implements Serializable {
             step.toJson(robotId, device, jsonArrayBuilder);
         }
     }
+
+    public int countSeconds() {
+        int seconds = 0;
+        for (Step step : steps) {
+            seconds += step.getSecondsDuration();
+        }
+        return seconds;
+    }
+
 }

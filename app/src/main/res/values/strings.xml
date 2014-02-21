@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">JDance</string>
-    <string name="hello_world">Hello world!</string>
     <string name="Choreographies">Choreographies</string>
     <string name="DanceFloor">Dance Floor</string>
     <string name="robots">Robots</string>
@@ -14,8 +13,6 @@
     <string name="ip">Ip</string>
     <string name="port">Port</string>
     <string name="device">Device</string>
-    <string name="ip_summary">Please provide the ip server</string>
-    <string name="device_summary">Please provide device</string>
     <string name="Load_Robots">Load Robots</string>
     <string name="select_a_robot">Select a robot</string>
     <string name="step_created">Step Created</string>
@@ -26,5 +23,11 @@
     <string name="check_ip_or_port">check ip or port</string>
     <string name="error">ERROR!</string>
     <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="Create_Robot">Create Robot</string>
+    <string name="steps">Steps</string>
+    <string name="robot_id">Robot Id</string>
+    <string name="add_step">Add Step</string>
+    <string name="seconds">Seconds</string>
 
 </resources>

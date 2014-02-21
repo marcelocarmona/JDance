@@ -4,15 +4,13 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Toast;
 
 import com.example.jdance.app.model.Repository;
 import com.example.jdance.app.model.Robot;
 import com.example.jdance.app.model.SenderRequest;
+import com.example.jdance.app.util.DanceFloorAdapter;
+import com.example.jdance.app.util.DeleteOnItemLongClickListener;
 
 import java.util.List;
 
@@ -24,17 +22,11 @@ public class DanceFloorActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter<Robot>(this, R.layout.list_item, robots));
+        //setListAdapter(new ArrayAdapter<Robot>(this, R.layout.list_item, robots));
+        setListAdapter(new DanceFloorAdapter(this, robots));
 
         //delete robot
-        getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                robots.remove(position);
-                ((BaseAdapter) parent.getAdapter()).notifyDataSetChanged();
-                return true;
-            }
-        });
+        getListView().setOnItemLongClickListener(new DeleteOnItemLongClickListener(robots));
     }
 
     @Override

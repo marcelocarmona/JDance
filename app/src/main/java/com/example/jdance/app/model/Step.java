@@ -25,4 +25,6 @@ public interface Step {
      */
     public void toJson(int robotId, String device, JsonArrayBuilder jsonArrayBuilder);
 
+    public int getSecondsDuration();
+
 }

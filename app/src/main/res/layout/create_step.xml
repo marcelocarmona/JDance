@@ -43,7 +43,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/sbLeftMotorVelocity"
             android:indeterminate="false"
-            android:indeterminateOnly="false" />
+            android:indeterminateOnly="false"
+            android:max="200"
+            android:progress="100" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,7 +72,9 @@
             android:id="@+id/sbRightMotorVelocity"
             android:indeterminate="false"
             android:indeterminateOnly="false"
-            android:mirrorForRtl="false" />
+            android:mirrorForRtl="false"
+            android:max="200"
+            android:progress="100" />
 
         <TextView
             android:layout_width="wrap_content"

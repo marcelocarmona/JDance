@@ -18,10 +18,32 @@ public class Repository {
 
     //contiene valores por defecto para probar en la aplicacion
     private static Repository ourInstance = new Repository(
-            new ArrayList<Robot>(),
+            new ArrayList<Robot>(
+                    Arrays.asList(
+                            new Robot(1),
+                            new Robot(2),
+                            new Robot(3),
+                            new Robot(4),
+                            new Robot(5),
+                            new Robot(6),
+                            new Robot(7),
+                            new Robot(8),
+                            new Robot(9),
+                            new Robot(10),
+                            new Robot(11),
+                            new Robot(12),
+                            new Robot(13),
+                            new Robot(14),
+                            new Robot(15),
+                            new Robot(16),
+                            new Robot(17),
+                            new Robot(18),
+                            new Robot(19),
+                            new Robot(20))
+            ),
             new ArrayList<Step>(
-                Arrays.asList(new DefaultStep("forward",50,50,3),
-                              new DefaultStep("turn",50,0,3))
+                    Arrays.asList(new DefaultStep("forward", 50, 50, 3),
+                            new DefaultStep("turn", 50, 0, 3))
             ),
             new ArrayList<Choreography>(
                     Arrays.asList(

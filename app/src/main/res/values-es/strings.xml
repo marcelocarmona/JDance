@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">JDance</string>
+    <string name="Choreographies">Coreografías</string>
+    <string name="DanceFloor">Pista de Baile</string>
+    <string name="robots">Robots</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="action_create_step">Crear Paso</string>
+    <string name="action_create_choreography">Crear Coreografía</string>
+    <string name="action_go">Bailar</string>
+    <string name="Settings">Configuraciones</string>
+    <string name="ip">Ip</string>
+    <string name="port">Puerto</string>
+    <string name="device">Dispositivo</string>
+    <string name="Load_Robots">Cargar Robots</string>
+    <string name="select_a_robot">Seleccionar un robot</string>
+    <string name="step_created">Paso Creado</string>
+    <string name="dancing">Bailando...</string>
+    <string name="is_selected">es seleccionado</string>
+    <string name="choreography_name">Nombre de Coreografía</string>
+    <string name="create_choreography">Crear Coreografía</string>
+    <string name="check_ip_or_port">verificar ip y/o puerto</string>
+    <string name="error">ERROR!</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="Create_Robot">Crear Robot</string>
+    <string name="steps">Pasos</string>
+    <string name="robot_id">Robot Id</string>
+    <string name="add_step">Agregar Paso</string>
+    <string name="seconds">Segundos</string>
+
+</resources>

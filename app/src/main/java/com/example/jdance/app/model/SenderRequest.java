@@ -64,9 +64,7 @@ public class SenderRequest {
     }
 
     /**
-     *
-     * @throws java.io.IOException
-     * Carga los robots del servidor en Repository
+     * @throws java.io.IOException Carga los robots del servidor en Repository
      */
     public void loadRobots() throws IOException {
 
@@ -89,15 +87,15 @@ public class SenderRequest {
             e.printStackTrace();
         }
 
-        if(json == null) throw new IOException();
+        if (json == null) throw new IOException();
 
         //parse request
         JsonParser parser = Json.createParser(new StringReader(json));
         while (parser.hasNext()) {
             JsonParser.Event event = parser.next();
             if (event == Event.VALUE_NUMBER) {
-                String robotId = parser.getString();
-                Robot robot = new Robot(Integer.parseInt(robotId), "Robot" + robotId);
+                int robotId = Integer.parseInt(parser.getString());
+                Robot robot = new Robot(robotId);
                 robots.add(robot);
             }
         }

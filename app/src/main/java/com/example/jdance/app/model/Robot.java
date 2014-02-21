@@ -9,16 +9,11 @@ import javax.json.JsonObjectBuilder;
 
 public class Robot implements Serializable {
     private int id;
-    private String name;
     private Choreography choreography;
 
-    public Robot() {
-    }
-
-    public Robot(int id, String name) {
+    public Robot(int id) {
         super();
         this.id = id;
-        this.name = name;
     }
 
     public int getId() {
@@ -27,14 +22,6 @@ public class Robot implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Choreography getChorepgraphy() {
@@ -81,6 +68,13 @@ public class Robot implements Serializable {
         choreography.toJson(id, device, jsonArrayBuilder);
     }
 
+    public int countSteps() {
+        return this.choreography.getSteps().size();
+    }
+
+    public int countSeconds() {
+        return this.choreography.countSeconds();
+    }
 
     public boolean equals(Object o) {
         Robot otherRobot = (Robot) o;
@@ -88,6 +82,7 @@ public class Robot implements Serializable {
     }
 
     public String toString() {
-        return name;
+        return "Robot" + id;
     }
+
 }

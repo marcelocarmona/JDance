@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.jdance.app.model.Choreography;
 import com.example.jdance.app.model.Repository;
 import com.example.jdance.app.model.Robot;
+import com.example.jdance.app.util.DeleteOnItemLongClickListener;
 
 import java.util.List;
 
@@ -25,14 +26,13 @@ public class ChoreographyActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // no more this
-        // setContentView(R.layout.list_item);
-
-        setListAdapter(new ArrayAdapter<Choreography>(this, R.layout.list_item, Repository.getInstance().getChoreographies()));
+        List<Choreography> choreographies = Repository.getInstance().getChoreographies();
+        setListAdapter(new ArrayAdapter<Choreography>(this, R.layout.list_item, choreographies));
 
         ListView listView = getListView();
         listView.setTextFilterEnabled(true);
 
+        //send to dance floor
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
@@ -50,7 +50,7 @@ public class ChoreographyActivity extends ListActivity {
 
                 // When clicked, show a toast with the TextView text
                 Toast.makeText(getApplicationContext(),
-                        robot.toString() + " -> " + choreography.toString(), Toast.LENGTH_SHORT).show();
+                        robot.toString() + " <- " + choreography.toString(), Toast.LENGTH_SHORT).show();
 
                 //new intent
                 Intent intent = new Intent(getApplicationContext(), DanceFloorActivity.class);
@@ -60,5 +60,8 @@ public class ChoreographyActivity extends ListActivity {
                 finish();
             }
         });
+
+        //delete Choreography
+        listView.setOnItemLongClickListener(new DeleteOnItemLongClickListener(choreographies));
     }
 }

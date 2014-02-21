@@ -1,35 +1,40 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/action_load_robots"
         android:title="@string/Load_Robots"
+        android:icon="@android:drawable/stat_notify_sync"
+        android:orderInCategory="95"
+        android:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/action_create_robot"
+        android:title="@string/Create_Robot"
         android:orderInCategory="96"
-        app:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_create_step"
         android:title="@string/action_create_step"
         android:orderInCategory="97"
-        app:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_create_choreography"
         android:title="@string/action_create_choreography"
         android:orderInCategory="98"
-        app:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_dance_floor"
         android:title="@string/DanceFloor"
         android:orderInCategory="99"
-        app:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
         android:orderInCategory="100"
-        app:showAsAction="never" />
+        android:showAsAction="ifRoom|withText" />
 </menu>
