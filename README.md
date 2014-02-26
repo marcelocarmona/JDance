@@ -32,8 +32,8 @@ http://wiki.labmovil.linti.unlp.edu.ar/index.php?title=RemoteBot:_Android_%2B_Ro
 
 Flujo
 ======
-![flujo](https://lh5.googleusercontent.com/WuIjQgagqLl9HqWhYQABfn65f_Rghqov4ro0SZBWKVpMdLhSP-fK3jweCnuVx5jsD6fkNABSZW4)
+![flujo](http://mclo.github.io/JDance/images/activities_flow.png)
 
 Model
 =====
-![Model](https://lh6.googleusercontent.com/m1iBANUPzRMr_A7zBikxRqcGhmWSiPk68iudPRSzoXrFO9vocdkG7nprNRr6nRudEPz164qUN_8)
+![Model](http://mclo.github.io/JDance/images/model.png)
