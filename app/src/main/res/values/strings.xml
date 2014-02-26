@@ -34,5 +34,9 @@
     <string name="right_motor_velocity">Right Motor Velocity</string>
     <string name="seconds_duration">Seconds Duration</string>
     <string name="create_step">Create Step</string>
+    <string name="add_beep">Add Beep</string>
+    <string name="create_beep">Create Beep</string>
+    <string name="frequency">Frequency</string>
+    <string name="about">About</string>
 
 </resources>

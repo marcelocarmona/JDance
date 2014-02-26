@@ -5,23 +5,23 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jdance.app.model.Repository;
 import com.example.jdance.app.model.Robot;
 import com.example.jdance.app.model.SenderRequest;
 import com.example.jdance.app.util.DeleteOnItemLongClickListener;
+import com.example.jdance.app.util.ItemAdapter;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,23 +37,26 @@ public class RobotActivity extends ListActivity {
 
         CharSequence title = getString(R.string.select_a_robot);
         setTitle(title);
-        setListAdapter(new ArrayAdapter<Robot>(this, R.layout.list_item, robots));
+
+        setListAdapter(new ItemAdapter(this, robots, R.drawable.ic_android_dance));
 
         ListView listView = getListView();
         listView.setTextFilterEnabled(true);
 
-        //select choreography
+        //select ic_choreography
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                // When clicked, show a toast with the TextView text
+
+
                 Toast.makeText(getApplicationContext(),
-                        ((TextView) view).getText() + " " + getString(R.string.is_selected), Toast.LENGTH_SHORT).show();
+                        robots.get(position).toString() + " " + getString(R.string.is_selected), Toast.LENGTH_SHORT).show();
 
                 //Intent
                 Intent intent = new Intent(getApplicationContext(), ChoreographyActivity.class);
                 intent.putExtra("ROBOT", robots.get(position));
                 startActivity(intent);
+                overridePendingTransition(R.anim.animation_to_right_enter, R.anim.animation_to_right_leave);
             }
         });
 
@@ -98,11 +101,15 @@ public class RobotActivity extends ListActivity {
                 return true;
             case R.id.action_dance_floor:
                 startActivity(new Intent(getApplicationContext(), DanceFloorActivity.class));
+                overridePendingTransition(R.anim.animation_to_right_enter, R.anim.animation_to_right_leave);
                 return true;
             case R.id.action_settings:
                 Intent preferencesIntent = new Intent(getApplicationContext(), Settings.class);
                 startActivity(preferencesIntent);
                 return true;
+            case R.id.action_about:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://mclo.github.io/JDance/"));
+                startActivity(browserIntent);
             default:
                 return super.onOptionsItemSelected(item);
         }

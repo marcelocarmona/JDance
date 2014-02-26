@@ -9,6 +9,12 @@
         android:showAsAction="ifRoom|withText" />
 
     <item
+        android:id="@+id/action_add_beep_step"
+        android:title="@string/add_beep"
+        android:icon="@android:drawable/ic_lock_silent_mode_off"
+        android:showAsAction="ifRoom|withText" />
+
+    <item
         android:id="@+id/action_create_choreography"
         android:title="@string/create_choreography"
         android:showAsAction="ifRoom|withText" />

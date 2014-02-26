@@ -46,7 +46,7 @@ public class DanceFloorAdapter extends ArrayAdapter<Robot> {
         txtRobotNameView.setText(robot.toString());
         txtRobotChoreographyView.setText(robot.getChorepgraphy().toString());
         txtRobotStepsView.setText(context.getString(R.string.steps) + ": " + Integer.toString(robot.countSteps()));
-        txtRobotMinutesView.setText(context.getString(R.string.seconds) + ": " + Integer.toString(robot.countSeconds()));
+        txtRobotMinutesView.setText(context.getString(R.string.seconds) + ": " + String.format("%.2f", robot.countSeconds()));
 
         return rowView;
     }

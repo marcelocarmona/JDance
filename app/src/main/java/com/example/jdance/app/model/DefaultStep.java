@@ -10,10 +10,10 @@ public class DefaultStep implements Step, Serializable {
     private String name;
     private int leftMotorVelocity;
     private int rightMotorVelocity;
-    private int secondsDuration;
+    private double secondsDuration;
 
     public DefaultStep(String name, int leftMotorVelocity, int rightMotorVelocity,
-                       int secondsDuration) {
+                       double secondsDuration) {
         this.name = name;
         this.leftMotorVelocity = leftMotorVelocity;
         this.rightMotorVelocity = rightMotorVelocity;
@@ -44,11 +44,11 @@ public class DefaultStep implements Step, Serializable {
         this.rightMotorVelocity = rightMotorVelocity;
     }
 
-    public int getSecondsDuration() {
+    public double getSecondsDuration() {
         return secondsDuration;
     }
 
-    public void setSecondsDuration(int secondsDuration) {
+    public void setSecondsDuration(double secondsDuration) {
         this.secondsDuration = secondsDuration;
     }
 

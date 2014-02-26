@@ -72,7 +72,7 @@ public class Robot implements Serializable {
         return this.choreography.getSteps().size();
     }
 
-    public int countSeconds() {
+    public double countSeconds() {
         return this.choreography.countSeconds();
     }
 
@@ -82,7 +82,7 @@ public class Robot implements Serializable {
     }
 
     public String toString() {
-        return "Robot" + id;
+        return "Robot " + id;
     }
 
 }

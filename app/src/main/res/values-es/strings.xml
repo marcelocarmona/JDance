@@ -34,5 +34,9 @@
     <string name="right_motor_velocity">Velocidad del motor derecho</string>
     <string name="seconds_duration">Segundos de duración</string>
     <string name="create_step">Crear Paso</string>
+    <string name="add_beep">Agergar Sonido</string>
+    <string name="create_beep">Crear Sonido</string>
+    <string name="frequency">Frecuencia</string>
+    <string name="about">Acerca de...</string>
 
 </resources>

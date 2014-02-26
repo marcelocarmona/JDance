@@ -22,7 +22,7 @@ public class DanceFloorActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setListAdapter(new ArrayAdapter<Robot>(this, R.layout.list_item, robots));
+
         setListAdapter(new DanceFloorAdapter(this, robots));
 
         //delete robot
@@ -31,7 +31,6 @@ public class DanceFloorActivity extends ListActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.dance_floor_menu, menu);
         return true;
     }
@@ -40,7 +39,6 @@ public class DanceFloorActivity extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.action_settings:
                 return true;
@@ -53,6 +51,13 @@ public class DanceFloorActivity extends ListActivity {
 
     }
 
+    //override animation transition
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.animation_to_left_enter, R.anim.animation_to_left_leave);
+    }
+
     //method to dance
     private void go() {
         //send request
@@ -60,7 +65,6 @@ public class DanceFloorActivity extends ListActivity {
         senderRequest.toDance();
 
         Toast.makeText(getApplicationContext(), getString(R.string.dancing), Toast.LENGTH_SHORT).show();
-
         finish();
     }
 }

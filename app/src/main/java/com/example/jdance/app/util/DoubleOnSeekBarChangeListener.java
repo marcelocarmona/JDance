@@ -8,19 +8,20 @@ import android.widget.TextView;
  * <p/>
  * Listener para mostrar el velor del seekbar mientras se mueve
  */
-public class MyOnSeekBarChangeListener implements SeekBar.OnSeekBarChangeListener {
+public class DoubleOnSeekBarChangeListener implements SeekBar.OnSeekBarChangeListener {
 
     private TextView numberLabel;
-    private int NegativeProgress;
+    private double percentage;
 
-    public MyOnSeekBarChangeListener(TextView numberLabel, int negativeProgress) {
+    public DoubleOnSeekBarChangeListener(TextView numberLabel, double percentage) {
         this.numberLabel = numberLabel;
-        NegativeProgress = negativeProgress;
+        this.percentage = percentage;
     }
+
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        numberLabel.setText(String.valueOf(progress - NegativeProgress));
+        numberLabel.setText(String.format("%.1f", (progress * percentage)));
     }
 
     @Override

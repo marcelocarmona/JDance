@@ -10,12 +10,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
+import com.example.jdance.app.model.BeepStep;
 import com.example.jdance.app.model.Choreography;
 import com.example.jdance.app.model.Repository;
 import com.example.jdance.app.model.Step;
 import com.example.jdance.app.util.DeleteOnItemLongClickListener;
+import com.example.jdance.app.util.DoubleOnSeekBarChangeListener;
+import com.example.jdance.app.util.NegativeOnSeekBarChangeListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +59,10 @@ public class CreateChoreography extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add_step:
-                addStepDialog();
+                addDefaultStepDialog();
+                return true;
+            case R.id.action_add_beep_step:
+                createBeepStepDialog();
                 return true;
             case R.id.action_create_choreography:
                 CreateChoreographyDialog();
@@ -64,7 +73,7 @@ public class CreateChoreography extends ListActivity {
     }
 
 
-    private void addStepDialog() {
+    private void addDefaultStepDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(getString(R.string.steps));
 
@@ -89,6 +98,58 @@ public class CreateChoreography extends ListActivity {
         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void createBeepStepDialog() {
+        // get create_step.xml view
+        LayoutInflater li = LayoutInflater.from(context);
+        View createBeepStepView = li.inflate(R.layout.create_beep_step, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+        // set create_step.xml to alertdialog builder
+        alertDialogBuilder.setView(createBeepStepView);
+
+
+        //Seek bar Frequency
+        final SeekBar sbFrequency = (SeekBar) createBeepStepView.findViewById(R.id.sbFrequency);
+        final TextView txtFrequency = (TextView) createBeepStepView.findViewById(R.id.txtFrequency);
+        sbFrequency.setOnSeekBarChangeListener(new NegativeOnSeekBarChangeListener(txtFrequency));
+
+        //Seek bar SecondsDuration
+        final SeekBar sbSecondsDuration = (SeekBar) createBeepStepView.findViewById(R.id.sbSecondsDuration);
+        final TextView txtSecondsDuration = (TextView) createBeepStepView.findViewById(R.id.txtSecondsDuration);
+        sbSecondsDuration.setOnSeekBarChangeListener(new DoubleOnSeekBarChangeListener(txtSecondsDuration, 0.10));
+
+
+        // set dialog message
+        alertDialogBuilder
+
+                .setTitle(getString(R.string.create_beep))
+                .setPositiveButton(getString(R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // create beepStep
+                                int frequency = sbFrequency.getProgress();
+                                double secondsDuration = sbSecondsDuration.getProgress() * 0.10;
+                                //truncate
+                                secondsDuration = Math.floor(secondsDuration * 10) / 10;
+                                newStepList.add(new BeepStep(frequency, secondsDuration));
+                                ((BaseAdapter) getListAdapter()).notifyDataSetChanged();
+                            }
+                        })
+                .setNegativeButton(getString(R.string.cancel),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
     }
 
     private void CreateChoreographyDialog() {

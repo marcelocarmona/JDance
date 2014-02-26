@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dip">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/frequency"
+        android:layout_marginBottom="5dip" />
+
+    <!-- rightMotorVelocity seek bar -->
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sbFrequency"
+        android:indeterminate="false"
+        android:indeterminateOnly="false"
+        android:mirrorForRtl="false"
+        android:max="2500"
+        android:progress="0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0"
+        android:id="@+id/txtFrequency"
+        android:layout_marginBottom="10dip"
+        android:layout_gravity="right" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/seconds_duration"
+        android:singleLine="true"
+        android:layout_marginBottom="5dip" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sbSecondsDuration"
+        android:indeterminate="false"
+        android:indeterminateOnly="false" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0"
+        android:id="@+id/txtSecondsDuration"
+        android:layout_marginBottom="20dip"
+        android:layout_gravity="right" />
+
+
+</LinearLayout>

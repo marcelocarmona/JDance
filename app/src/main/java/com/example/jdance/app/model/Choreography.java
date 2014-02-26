@@ -49,8 +49,8 @@ public class Choreography implements Serializable {
         }
     }
 
-    public int countSeconds() {
-        int seconds = 0;
+    public double countSeconds() {
+        double seconds = 0;
         for (Step step : steps) {
             seconds += step.getSecondsDuration();
         }

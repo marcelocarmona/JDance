@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,6 +12,7 @@ import com.example.jdance.app.model.Choreography;
 import com.example.jdance.app.model.Repository;
 import com.example.jdance.app.model.Robot;
 import com.example.jdance.app.util.DeleteOnItemLongClickListener;
+import com.example.jdance.app.util.ItemAdapter;
 
 import java.util.List;
 
@@ -27,7 +27,8 @@ public class ChoreographyActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         List<Choreography> choreographies = Repository.getInstance().getChoreographies();
-        setListAdapter(new ArrayAdapter<Choreography>(this, R.layout.list_item, choreographies));
+//        setListAdapter(new ArrayAdapter<Choreography>(this, R.layout.list_item, choreographies));
+        setListAdapter(new ItemAdapter(this, choreographies, R.drawable.ic_choreography));
 
         ListView listView = getListView();
         listView.setTextFilterEnabled(true);
@@ -40,7 +41,7 @@ public class ChoreographyActivity extends ListActivity {
                 //intent
                 Robot robot = (Robot) getIntent().getExtras().get("ROBOT");
 
-                //set choreography to the robot
+                //set ic_choreography to the robot
                 Choreography choreography = (Choreography) parent.getAdapter().getItem(position);
                 robot.setChorepgraphy(choreography);
                 List<Robot> danceFloor = Repository.getInstance().getDanceFloor();
@@ -55,6 +56,7 @@ public class ChoreographyActivity extends ListActivity {
                 //new intent
                 Intent intent = new Intent(getApplicationContext(), DanceFloorActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.animation_to_right_enter, R.anim.animation_to_right_leave);
 
                 //finish activity
                 finish();
@@ -63,5 +65,12 @@ public class ChoreographyActivity extends ListActivity {
 
         //delete Choreography
         listView.setOnItemLongClickListener(new DeleteOnItemLongClickListener(choreographies));
+    }
+
+    //override animation transition
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.animation_to_left_enter, R.anim.animation_to_left_leave);
     }
 }
